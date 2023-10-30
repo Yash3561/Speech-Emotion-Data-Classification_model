@@ -10,14 +10,14 @@ Multiple businesses can leverage this to provide different services, such as mar
 ### Datasets:
 Made use of two different datasets:
 1. [RAVDESS](https://zenodo.org/record/1188976).
-This dataset includes around 1500 audio file input from 24 different actors. 12 male and 12 female where these actors record short audios in 8 different emotions i.e 1 = neutral, 2 = calm, 3 = happy, 4 = sad, 5 = angry, 6 = fearful, 7 = disgust, 8 = surprised.<br>
-Each audio file is named in such a way that the 7th character is consistent with the different emotions that they represent.
+This dataset contains approximately 1500 audio files from 24 distinct actors. 12 male and 12 female performers record brief audio clips expressing 8 various emotions, i.e. 1 = neutral, 2 = calm, 3 = joyful, 4 = sad, 5 = furious, 6 = afraid, 7 = disgusted, 8 = astonished.<br>
+Each audio file is named in such a way that the seventh character corresponds to the many emotions that they convey.
 
-2. [SAVEE](http://kahlan.eps.surrey.ac.uk/savee/Download.html).
-This dataset contains around 500 audio files recorded by 4 different male actors. The first two characters of the file name correspond to the different emotions that the potray. 
+3. [SAVEE](http://kahlan.eps.surrey.ac.uk/savee/Download.html).
+This dataset includes approximately 500 audio files recorded by four different male performers. The first two characters of the file name represent the various emotions that the potrays. 
 
 ## Audio files:
-Tested out the audio files by plotting out the waveform and a spectrogram to see the sample audio files.<br>
+The audio files were tested by graphing the waveform and a spectrogram to observe the sample audio files.<br>
 **Waveform**
 ![](images/wave.png?raw=true)
 <br>
@@ -32,8 +32,8 @@ For feature extraction we make use of the [**LibROSA**](https://librosa.github.i
 <br>
 ![](images/feature.png?raw=true)
 <br>
-* Here there are some things to note. While extracting the features, all the audio files have been timed for 3 seconds to get equal number of features. 
-* The sampling rate of each file is doubled keeping sampling frequency constant to get more features which will help classify the audio file when the size of dataset is small.
+* Here are some points to consider. All audio files were timed for 3 seconds while being extracted for an equal amount of features. 
+* When the size of the dataset is modest, the sampling rate of each file is doubled while the sampling frequency remains fixed in order to obtain more features that will aid in the classification of the audio file.
 <br>
 
 **The extracted features looks as follows**
@@ -48,9 +48,9 @@ These are array of values with lables appended to them.
 
 ## Building Models
 
-Since the project is a classification problem, **Convolution Neural Network** seems the obivious choice. We also built **Multilayer perceptrons** and **Long Short Term Memory** models but they under-performed with very low accuracies which couldn't pass the test while predicting the right emotions.
+Because this is a classification task, **Convolution Neural Network** appears to be the obvious choice. We also created **Multilayer Perceptrons** and **Long Short Term Memory** models, however they underperformed with extremely low accuracies, failing to pass the test while predicting the correct emotions.
 
-Building and tuning a model is a very time consuming process. The idea is to always start small without adding too many layers just for the sake of making it complex. After testing out with layers, the model which gave the max validation accuracy against test data was little more than 70%
+Building and tuning a model takes a significant amount of time. The aim is to always start basic and avoid adding too many layers only to make it more complex. After layer testing, the model with the highest validation accuracy against test data was slightly more than 70%.
 <br>
 <br>
 ![](images/cnn.png?raw=true)
@@ -58,15 +58,15 @@ Building and tuning a model is a very time consuming process. The idea is to alw
 
 ## Predictions
 
-After tuning the model, tested it out by predicting the emotions for the test data. For a model with the given accuracy these are a sample of the actual vs predicted values.
+After fine-tuning the model, it was put to the test by predicting the emotions for the test data. These are actual vs expected values for a model with the appropriate accuracy.
 <br>
 <br>
 ![](images/predict.png?raw=true)
 <br>
 
 ## Testing out with live voices.
-In order to test out our model on voices that were completely different than what we have in our training and test data, we recorded our own voices with dfferent emotions and predicted the outcomes. You can see the results below:
-The audio contained a male voice which said **"This coffee sucks"** in a angry tone.
+We recorded our own voices with varied emotions and forecasted the outcomes to test our model on voices that were radically different from what we had in our training and test data. The outcomes are shown below:
+The recording contained an angry male voice saying **"This coffee sucks"**.
 <br>
 ![](images/livevoice.PNG?raw=true)
 <br>
@@ -74,9 +74,9 @@ The audio contained a male voice which said **"This coffee sucks"** in a angry t
 ![](images/livevoice2.PNG?raw=true)
 <br>
 
-### As you can see that the model has predicted the male voice and emotion very accurately in the image above.
+### In the image above, you can see that the model predicted the male voice and mood pretty precisely.
 
-## NOTE: If you are using the model directly and want to decode the output ranging from 0 to 9 then the following list will help you.
+## NOTE: If you are directly using the model and wish to decode the output spanning from 0 to 9, the list below will assist you.
 
 0 - female_angry <br>
 1 - female_calm <br>
@@ -90,4 +90,4 @@ The audio contained a male voice which said **"This coffee sucks"** in a angry t
 9 - male_sad <br>
 
 ## Conclusion
-Building the model was a challenging task as it involved lot of trail and error methods, tuning etc. The model is very well trained to distinguish between male and female voices and it distinguishes with 100% accuracy. The model was tuned to detect emotions with more than 70% accuracy. Accuracy can be increased by including more audio files for training.
+Building the model was a difficult effort because it required a lot of trial and error methods, adjusting, and so on. The model has been extremely thoroughly trained to discern between male and female sounds, and it does so with 100% accuracy. The algorithm has been fine-tuned to recognize emotions with greater than 70% accuracy. More audio files for training can help improve accuracy.
