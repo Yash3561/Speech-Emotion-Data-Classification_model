@@ -1,9 +1,9 @@
 # Speech Emotion Analyzer
 
-* The idea behind creating this project was to build a machine learning model that could detect emotions from the speech we have with each other all the time. Nowadays personalization is something that is needed in all the things we experience everyday. 
+* The goal of this research was to create a machine learning model that could recognize emotions from the speech we all use all the time. Nowadays, personalization is required in everything we encounter on a daily basis.
 
-* So why not have a emotion detector that will guage your emotions and in the future recommend you different things based on your mood. 
-This can be used by multiple industries to offer different services like marketing company suggesting you to buy products based on your emotions, automotive industry can detect the persons emotions and adjust the speed of autonomous cars as required to avoid any collisions etc.
+* So why not have an emotion detector that will gauge your feelings and recommend different items based on your mood in the future? 
+Multiple businesses can leverage this to provide different services, such as marketing companies recommending things based on your emotions, the automobile industry detecting people's emotions and adjusting the speed of autonomous cars as needed to avoid crashes, and so on.
 
 <br>
 
